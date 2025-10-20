@@ -260,19 +260,20 @@ erDiagram
     }
     
     UserTaskStatus {
-        int Value "Enum Value"
-        string Name "Enum Name"
+        int Running "0"
+        int Completed "1" 
+        int Pending "2"
+        int OnHold "3"
     }
     
     UserTask ||--|| UserTaskStatus : has
-
-    UserTaskStatus {
-        Running "0 - In Progress"
-        Completed "1 - Finished" 
-        Pending "2 - Not Started"
-        OnHold "3 - Paused"
-    }
 ```
+
+**UserTaskStatus Enum Values:**
+- `Running` (0) - Task is currently in progress
+- `Completed` (1) - Task has been finished
+- `Pending` (2) - Task is waiting to be started  
+- `OnHold` (3) - Task is temporarily paused
 
 ### UserTask Model
 
